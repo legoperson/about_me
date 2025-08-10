@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>关于我 · Zhidong Li</title>
+  <meta name="description" content="Zhidong Li — AI · 数据科学 · 可持续 · 农业与房地产" />
+  <style>
+    /* =========================
+       Tech Neon Dark Theme
+       (No text changed, design only)
+    ==========================*/
+    :root{
+      --bg:#050812;
+      --bg-elev:#0a1324;
+      --card:rgba(255,255,255,.04);
+      --card-2:rgba(18,28,58,.6);
+      --text:#e8edf6;
+      --muted:#a2b2c8;
+      --primary:#4dd0e1;
+      --accent:#a78bfa;
+      --edge:#1ef7a2;
+      --chip-bg:rgba(255,255,255,.06);
+      --chip-bd:rgba(255,255,255,.12);
+      --ring: 0 0 0 1px rgba(255,255,255,.06), 0 10px 30px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius-sm:12px;
+      --shadow: 0 10px 30px rgba(0,0,0,.45);
+      --grid-gap: 1.2rem;
+    }
+
+    html,body{height:100%;}
+    body{font-family: "Inter", "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif; margin:0; background:
+      radial-gradient(1200px 600px at 10% -10%, #0b1834 0%, transparent 60%),
+      radial-gradient(1200px 800px at 120% 10%, #1d0f28 0%, transparent 60%),
+      linear-gradient(180deg, var(--bg) 0%, #070c18 100%);
+      color:var(--text); line-height:1.75; }
+
+    a{color:var(--primary); text-decoration:none}
+    a:hover{filter:brightness(1.15)}
+
+    /* Header */
+    header{position:relative; padding:64px 20px 36px; overflow:hidden;}
+    header::before{content:""; position:absolute; inset:-2px; background:
+      conic-gradient(from 90deg at 40% -10%, var(--primary), transparent 35%),
+      conic-gradient(from -90deg at 140% 10%, var(--accent), transparent 40%);
+      filter: blur(42px) saturate(120%); opacity:.45; pointer-events:none;}
+
+    .wrap{max-width:1200px; margin:0 auto; padding:0 20px;}
+
+    h1{font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight:900; letter-spacing:.3px;
+      background: linear-gradient(92deg, var(--primary) 0%, var(--accent) 50%, var(--edge) 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent; margin:0 0 8px;}
+    .tagline{color:var(--muted); font-size:1.02rem; margin-top:8px}
+
+    /* Main layout */
+    main{padding: 10px 0 64px;}
+    .grid{display:grid; grid-template-columns: 1.05fr .95fr; gap:var(--grid-gap);} 
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr;}}
+
+    /* Card */
+    .card{position:relative; border-radius:var(--radius); padding:24px 24px; background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      box-shadow: var(--shadow); border:1px solid rgba(255,255,255,.08); overflow:hidden; backdrop-filter: blur(8px);}
+    .card::before{content:""; position:absolute; inset: -1px; border-radius: inherit; padding:1px; background:
+      linear-gradient(120deg, rgba(77,208,225,.35), rgba(167,139,250,.15) 40%, rgba(30,247,162,.25));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;}
+
+    /* Section titles */
+    h2{font-size: clamp(1.4rem, 2.2vw, 1.9rem); font-weight:800; margin: 0 0 14px; display:flex; align-items:center; gap:10px}
+    h2 .bar{display:inline-block; width:10px; height:22px; border-radius:6px; background: linear-gradient(180deg, var(--primary), var(--accent)); box-shadow:0 0 0 4px rgba(77,208,225,.15)}
+
+    h3{margin: 18px 0 8px; font-size:1.06rem}
+    p{margin: 8px 0 10px; font-size:1.02rem}
+    ul{margin: 8px 0 0 0; padding-left: 1.15rem}
+
+    .muted{opacity:.85; color:var(--muted);}
+    .chip{display:inline-block; padding:.28rem .64rem; margin:.2rem .22rem; background:var(--chip-bg); border:1px solid var(--chip-bd); border-radius:999px; font-size:.82rem}
+
+    /* Section shells for subtle glow */
+    section{position:relative; margin-bottom: 26px;}
+    section .halo{position:absolute; inset: -8px; z-index:-1; background:
+      radial-gradient(360px 200px at 10% 0%, rgba(77,208,225,.14), transparent),
+      radial-gradient(320px 200px at 90% 0%, rgba(167,139,250,.12), transparent);
+      filter: blur(18px);} 
+
+    /* Two columns: left focus, right sidebar */
+    .maincol{display:grid; gap:var(--grid-gap)}
+    .sidecol{display:grid; gap:var(--grid-gap); align-content:start}
+
+    /* Timeline */
+    .timeline{position:relative; padding-left: 22px}
+    .timeline::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: linear-gradient(180deg, rgba(77,208,225,.6), rgba(167,139,250,.2));}
+    .tl-item{position:relative; padding-left: 14px; margin: 8px 0}
+    .tl-item::before{content:""; position:absolute; left:-4px; top:.55rem; width:10px; height:10px; border-radius:50%; background:var(--edge); box-shadow:0 0 0 4px rgba(30,247,162,.16)}
+
+    /* Footer */
+    footer{padding:24px 18px 46px; color:var(--muted); text-align:center; border-top:1px solid rgba(255,255,255,.06); background: linear-gradient(180deg, transparent, rgba(255,255,255,.03));}
+
+    /* Nice list bullets */
+    li{margin: 8px 0;}
+    li::marker{color:var(--primary)}
+
+    /* Subtle entry animation */
+    @keyframes popin{from{opacity:0; transform: translateY(6px)} to{opacity:1; transform:none}}
+    .card{animation: popin .5s ease both}
+
+    /* Decorative grid lines */
+    .gridlines{position:fixed; inset:0; pointer-events:none; opacity:.08;}
+    .gridlines::before{content:""; position:absolute; inset:0; background-image: linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size: 80px 80px; mix-blend-mode: overlay;}
+
+    /* Code-friendly pre (unused now, but ready) */
+    pre{background: rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); padding:14px; border-radius:var(--radius-sm); overflow:auto}
+
+    /* Contact pill */
+    .contact{display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:999px; background:linear-gradient(180deg, rgba(77,208,225,.12), rgba(167,139,250,.08)); border:1px solid rgba(255,255,255,.12); width:max-content}
+    .contact .dot{width:8px; height:8px; border-radius:50%; background:var(--primary); box-shadow:0 0 0 4px rgba(77,208,225,.18)}
+
+    /* Section separators */
+    .spacer{height:2px; background:linear-gradient(90deg, rgba(77,208,225,.0), rgba(77,208,225,.35), rgba(167,139,250,.0)); border-radius:2px; margin: 8px 0 4px}
+
+  </style>
+</head>
+<body>
+  <div class="gridlines" aria-hidden="true"></div>
+  <header>
+    <div class="wrap">
+      <h1>Zhidong Li</h1>
+      <div class="tagline"> </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <!-- Left / Main Column -->
+      <div class="maincol">
+        <section>
+          <div class="halo"></div>
+          <h2><span class="bar"></span>关于我</h2>
+          <div class="card">
+            <p>人工智能与数据科学专家，悉尼科技大学副教授。专长于将<strong>机器学习、图学习、时空点过程（TPP/Hawkes）、计算机视觉与遥感、可解释与公平性AI、MLOps</strong>组合成体系化解决方案，面向农业、城市、水务、基础设施与市场分析等复杂场景落地。</p>
+            <p><strong>方法论框架：</strong>问题建模 → 数据治理与特征工程 → 模型与不确定性管理 → 可解释性与风险评估 → API/仪表盘/白皮书交付。<br>
+            <span class="muted">交付形态包含：在线服务（API/批处理）、可视化仪表盘、算法与代码包、技术报告与高层决策简报。</span></p>
+            <div>
+              <span class="chip">GNN / 图表示学习</span>
+              <span class="chip">TPP / Hawkes</span>
+              <span class="chip">遥感 / GIS</span>
+              <span class="chip">多模态融合</span>
+              <span class="chip">解释性 / 公平性</span>
+              <span class="chip">数据治理 / MLOps</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="halo"></div>
+          <h2><span class="bar"></span>主要贡献方向（可落地能力）</h2>
+          <div class="card">
+            <ul>
+              <li><strong>城市与人口分析：</strong>任意多边形区域的人口、住房容量与压力指数估计；实时热力图与趋势场景化模拟；用于规划选址与公共服务均衡配置的指标套件。</li>
+              <li><strong>农业与食品：</strong>基于遥感/气象/传感的多作物产量与等级预测；季节内预测滚动校准；“机器人观测 ↔ 历史遥感”的多模态对齐以缓解在田数据稀缺。</li>
+              <li><strong>水资源管理：</strong>原水水质时空预测与极端事件影响量化；余氯一致性优化；声学与异常检测结合的长期非出露漏损识别与定位。</li>
+              <li><strong>交通与运营优化：</strong>多源数据融合的列车运行表现与时刻表鲁棒性评估；分钟级风险预警与动态调参建议。</li>
+              <li><strong>基础设施运维：</strong>跨水/污水/燃气网络的资产故障风险预测与更新优先级；预算与地理约束下的最优更新组合推荐。</li>
+              <li><strong>气候与排放评估：</strong>地块级土地利用/变化（LULUC）识别与碳排放/汇估算；自上而下的金融端排放核算与审计；多情景压力测试。</li>
+              <li><strong>房地产与市场分析：</strong>租金与估值预测、重要因子敏感性与政策情景分析；面向业务的可控/可审计型大模型工作流。</li>
+              <li><strong>AI伦理与合规：</strong>可执行的AI伦理评估与保障流程，将公平性、透明度与问责机制内嵌至产品生命周期。</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div class="halo"></div>
+          <h2><span class="bar"></span>科研成果（从“科技能力”看）</h2>
+          <div class="card">
+            <h3>技术突破</h3>
+            <p>提出<strong>少样本跨域立体匹配</strong>与<strong>解释型TPP</strong>等方法；将<strong>GNN</strong>与时间序列融合用于大规模网络风险预测；把<strong>多模态（文本/影像/地理）</strong>用于估值与环境评估。</p>
+            <h3>系统集成</h3>
+            <p>面向生产构建<strong>时空数据湖</strong>与<strong>在线特征库</strong>，支撑批处理/流式推理；提供<strong>A/B 与影子评估</strong>、基线回溯与上线回滚机制。</p>
+            <h3>数据治理</h3>
+            <p>建立从采集、清洗、对齐到质检的<strong>端到端数据血缘</strong>；针对行政区版式变化设计稳定的空间对齐与跨期可比口径。</p>
+            <h3>可解释与风险控制</h3>
+            <p>针对关键决策提供<strong>要素敏感性</strong>、<strong>情景/反事实分析</strong>与<strong>不确定性量化</strong>，可输出政策影响与运营调参建议。</p>
+            <h3>科技治理</h3>
+            <p>将<strong>公平性与合规</strong>融入研发管线，形成可审计的近实时评估与报告，面向企业与公共部门的治理要求。</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right / Sidebar Column -->
+      <aside class="sidecol">
+        <section>
+          <div class="halo"></div>
+          <h2><span class="bar"></span>获奖与荣誉（含金量说明）</h2>
+          <div class="card">
+            <h3>科研与学术</h3>
+            <ul>
+              <li><strong>2021 UTS Medal for Research Impact</strong> — 学校最高级别科研奖章，表彰<strong>对经济、社会、环境或文化产生学术之外影响</strong>的研究成果（副校长年度科研卓越奖）。</li>
+              <li><strong>2018 Australian Museum Eureka Prize for Excellence in Data Science</strong> — 被称为澳大利亚最具影响力的国家级科学奖之一，覆盖研究、领导与科普多类别，数据科学奖聚焦于<strong>通过数据科学创造显著社会价值</strong>的团队。</li>
+              <li><strong>2014 NICTA Wealth Creation Impact Award</strong> — 国家级ICT研究机构对<strong>“科研成果的经济与社会转化价值”</strong>的认可。</li>
+            </ul>
+            <h3>行业与创新</h3>
+            <ul>
+              <li><strong>2022 Australian Water Association（NSW）R&D Excellence Award</strong> — 表彰<strong>挑战既有实践、推动水资源可持续</strong>的研发项目；州级获奖者晋级国家级年度盛典。</li>
+              <li><strong>2019 AIIA iAwards（Victoria）Industrial & Primary Industries Merit</strong> — iAwards是澳洲历史最久、覆盖最广的创新大奖，本项表彰在<strong>工业与初级产业</strong>场景的技术创新与影响。</li>
+              <li><strong>2018 AWA Research Innovation Award（NSW，Winner；National，High Commendation）</strong> — 表彰具有<strong>可验证行业影响</strong>的研究创新。</li>
+              <li><strong>2017 AIIA iAward</strong> — 澳大利亚数字创新生态的重要标杆奖项之一。</li>
+            </ul>
+            <h3>提名与表彰</h3>
+            <ul>
+              <li><strong>2019</strong> AWA Research Innovation Award（QLD）— Finalist</li>
+              <li><strong>2017</strong> International Institute for Analytics — <strong>ANNY Award Finalist</strong>（强调<strong>复杂分析在大型组织中的落地与业务价值</strong>）。</li>
+              <li><strong>2017</strong> AWA NSW Water Award — Research Innovation Award（Finalist）</li>
+            </ul>
+            <p class="muted">* 出于隐私保护，以上仅展示奖项与颁授机构，不含具体企业/合作方名称。</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="halo"></div>
+          <h2><span class="bar"></span>著作</h2>
+          <div class="card">
+            <h3>Data Analytics for Smart Infrastructure: Asset Management and Network Performance</h3>
+            <p>系统阐述数据分析在智能基础设施全生命周期中的应用：从状况感知、预测建模到决策支持与治理。</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="halo"></div>
+          <h2><span class="bar"></span>经历时间线</h2>
+          <div class="card timeline">
+            <p class="tl-item"><strong>2025–至今：</strong>推动跨行业AI落地与教育合作；在房地产、农业与自然资本等方向迭代产品级方案。</p>
+            <p class="tl-item"><strong>2019–2024：</strong>聚焦可持续农业与气候风险研究，构建从数据到应用的端到端能力。</p>
+            <p class="tl-item"><strong>2012：</strong>获UNSW博士学位，起步于计算机视觉与数据科学的交叉研究。</p>
+          </div>
+        </section>
+
+        <section>
+          <div class="halo"></div>
+          <h2><span class="bar"></span>联系</h2>
+          <div class="card">
+            <p class="contact"><span class="dot"></span> 📧 邮箱：your.name@example.com</p>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Zhidong Li · 用AI驱动未来</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
